@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Programacion y Lenguajes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="unpaz-header">
+            <img src="UNPAZ.PNG" alt="UNPAZ - Universidad Nacional de José C. Paz" class="unpaz-logo">
+        </div>
+        
+        <h1>Sistema de Gestión de Alumnos UNPAZ</h1>
+        <h2>Profesor: Ing Gerardo Tulian</h2>
+        <h3>Programado por Edu, Gonza & Omar</h3>
+        <h4>API conectada por Acces Point al microcontrolador ESP8266 wifi como Backend</h4>
+        
+        <div class="section lab-info">
+            <h2>Información del Laboratorio de Software</h2>
+            <div id="lab-info-content">
+                <p>Cargando información del laboratorio...</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Gestión de Alumnos</h2>
+            
+            <div id="status-message" class="status" style="display: none;"></div>
+            
+            <div class="form-group">
+                <button id="btn-refresh" class="btn-success">Actualizar Lista</button>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="number" id="search-id" placeholder="Buscar por ID">
+                    <button id="btn-search-id" class="btn-search">Buscar ID</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-name" placeholder="Buscar por nombre">
+                    <button id="btn-search-name" class="btn-search">Buscar Nombre</button>
+                </div>
+                <button id="btn-clear-search" class="btn-clear">Limpiar Búsqueda</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="alumnos-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre Completo</th>
+                            <th>Dirección</th>
+                            <th>Correo Electrónico</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Datos de alumnos se cargarán aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Agregar/Editar Alumno</h2>
+            <form id="alumno-form">
+                <input type="hidden" id="alumno-id">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-success">Guardar</button>
+                    <button type="button" id="btn-cancel" style="display: none;">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
